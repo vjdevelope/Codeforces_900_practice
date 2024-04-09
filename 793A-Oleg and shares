@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define max 1000000000
+using namespace std;
+
+int main()
+{
+    int i,j;
+    int mins=max;
+    
+    int n,k;
+    cin>>n>>k;
+    int a[n];
+    
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+        
+        if(a[i]<mins)
+        {
+            mins=a[i];
+        }
+    }
+    
+    long long sum=0;
+    int temp,flag=1;
+    
+    for(int i=0;i<n;i++)
+    {
+        if((a[i]-mins)%k)
+        {
+            flag=0;
+            break;
+        }
+        sum=sum+((a[i]-mins)/k);
+    }
+    if(flag)
+    {
+        cout<<sum<<endl;
+    }
+    else
+    {
+        cout<<"-1"<<endl;
+    }
+
+    return 0;
+}
