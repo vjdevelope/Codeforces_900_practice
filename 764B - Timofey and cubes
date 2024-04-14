@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long n,k;
+    cin>>n;
+    
+    vector<long long>a;
+    
+    for(long long i=0;i<n;i++)
+    {
+    	long long x;
+    	cin>>x;
+    	a.push_back(x);
+	}
+    
+    if(n%2==0)
+    {
+    	k=n/2;
+	}
+	else 
+	{
+		k=(n/2)+1;
+	}
+
+		for(long long i=0;i<k;i+=2)
+		{ 
+			swap(a[i],a[n-i-1]);
+		}
+		
+	for(long long i=0;i<n;i++)
+	{
+		cout<<a[i]<<" ";
+	}
+	
+    return 0;
+}
